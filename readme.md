@@ -60,7 +60,7 @@ aa.py:
     # main
     s = add(1,2)
     s = subtract(s,4)
-    s =add(s,5)
+    s = add(s,5)
     print(s)
 
 The relevant python modules to install are:
