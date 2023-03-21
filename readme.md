@@ -64,7 +64,6 @@ aa.py:
     print(s)
 
 The relevant python modules to install are:
-
 -   opentelemetry-distro
 -   opentelemtry-sdk-tools
 
@@ -72,8 +71,6 @@ Run the program with opentelemetry-instrument –tracer_exporter console –metr
 
     ​​opentelemetry-instrument --traces_exporter console --metrics_exporter console python3 aa.py | egrep '"name|_time'
 will give a more intuitive output.
-
-  
 
     "name": "add",
     "start_time": "2023-03-18T11:44:39.834039Z",
@@ -88,8 +85,6 @@ Now let’s try a server to visualize the traces. We will use honeycomb.io’s p
 
 Then set the environment, so that opentelemetry will know where to send the data.
 
-  
-
     export OTEL_EXPORTER_OTLP_ENDPOINT="https://api.honeycomb.io/"
     export OTEL_EXPORTER_OTLP_HEADERS="x-honeycomb-team=s9ss7f5j5kxtwkypttop4Ugss7tfNYjkjm3P4A"
     export OTEL_SERVICE_NAME="addsubtract"
@@ -101,7 +96,6 @@ Run the program with python3 aa.py
 You should be able to see the trace in the honeycomb.io web console. Make sure you are in the right environment, then New Query, select the pre-defined query with the slowest trace, select last 10 minutes, select your dataset (addsubtract) and Run Query. Click on traces - you should see a trace for addsubtract, but there are three, two for add and one for subtract. Why are they not joined together?
   
 ![](tgraph2.png)
-
 
 Answer - there is no span that encompasses the 3 calls, they are each their own independent span. The easiest way to fix this is to define a main function with its own decorator and then call that main function:
 
@@ -119,12 +113,6 @@ Answer - there is no span that encompasses the 3 calls, they are each their own 
 Run again - now we see one trace as expected. You might see more, remember you are querying the last 10 minutes, so if you were very fast the past traces are still within range of the query.
 
 ![](tgraph3.png)
-
-  
-Clicking on the trace, we can see the call graph:
-
-  
-![](https://lh4.googleusercontent.com/WrSPkLfyzF5gsMGSEsDQCJXSJ3UI4ReBsTk5F8rA2YprsFOKUkr0U9ZUDd2U1UKVZkO-aFhOleFY6Nr0w798mYAf-TqjIiTEjmzq-R_-c4nlC3bTDpC86l7Fs5POTt_jqks3vkCyF9SBK9W87i9gex8)
 
 This is pretty cool, but how would this work in a distributed system where these calls go to different microservices?
 
