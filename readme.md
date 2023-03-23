@@ -65,7 +65,7 @@ aa.py:
 
 The relevant python modules to install are:
 -   opentelemetry-distro
--   opentelemtry-sdk-tools
+-   opentelemtry-exporter-otlp
 
 Run the program with opentelemetry-instrument –tracer_exporter console –metrics_exporter console python3 aa.py. You will see output from the trace in JSON format. Running it like this:
 
