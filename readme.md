@@ -114,13 +114,13 @@ Run again - now we see one trace as expected. You might see more, remember you a
 
 ![](tgraph3.png)
 
-Elastic Observability also supports OpenTelemetry. We can switchto Elasic's solution simply by changing the environment variables. After creating a free trial on https://cloud.elastic.co, we can get the get the values for Elastic by logging in, selecting Observability, click on APM/Services, Add Data and scroll down to the tab with OpenTelemtry on it - that will show the values for your installation. The following values are just for illustration, they will not work, you need to replace ENDPOINT and HEADRE with the values form your installation.
+Elastic Observability supports OpenTelemetry out of the box. We can switch to Elasic simply by changing the environment variables. The easiest way is to open an account on https://cloud.elastic.co, then one  can get the get the environment values for Elastic by logging in, selecting Observability, click on APM/Services, Add Data and scroll down to the tab with OpenTelemetry on it - that will show the values for your installation. The following values are just for illustration, they will not work, you need to replace ENDPOINT and HEADRE with the values from your installation.
 
     export OTEL_EXPORTER_OTLP_ENDPOINT="https://3....0f605af200b.apm.us-central1.gcp.cloud.es.io:443"
     export OTEL_EXPORTER_OTLP_PROTOCOL="http/protobuf"
     export OTEL_EXPORTER_OTLP_HEADERS="Authorization=Bearer%209AZG...mD1"
 
-Once done it just works and sends teh vaue to Elasitc system, whih has quite extensive visualization capabilities. Here is an overview of a load test. You can see there are some outliers on the right hand side that are worth investigating as they ar eare way slower that the 95 percentile.
+Once done it just works and sends the tracing information to the Elasitc system, which has quite extensive visualization capabilities. Here is an overview of a load test. You can see there are some outliers on the right hand side that are worth investigating as they are way slower that the 95 percentile (95p line).
 
 ![](tgraph4.png)
 
