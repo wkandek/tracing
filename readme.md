@@ -126,7 +126,7 @@ Once done it just works and sends the tracing information to the Elasitc system,
 
 This is pretty cool, but how would this work in a distributed system where these calls go to different microservices?
 
-Stand by for part II.
+Go on to [part II](readme2.md)
 
 Helpful LInks:
 
