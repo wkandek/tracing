@@ -11,7 +11,7 @@ Calc.py requires the Pip module ply.
 
 The distributed version has two parts:
 
-- a server module (calcserver.py) that receives and breaks down the calculation to its parts, for example 3+2*3 gets broken down to:  2*3 result 6 and then 3+6 result 9.
+- a server module (calcserver.py) that receives and breaks down the calculation to its parts, for example 3+2 * 3 gets broken down to:  2 * 3 result 6 and then 3+6 result 9.
 - an api module (calcapi.py) that performs the basic operations: +,-,*,/
 
 The server module uses HTTP calls to communicate to the api module, the API returns a JSON formatted result, just like the monolith calc.py
