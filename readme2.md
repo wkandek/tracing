@@ -1,6 +1,6 @@
 Tracing Part II
 
-We will use a demo application for a calculator service (calc.py) to see how distributed tracing works. It is a simple to understand application (python3 calc.py) that responds to API requests in the format /api?2+3-1*4*(4+5). 
+We will use a demo application for a calculator service (calc.py) to see how distributed tracing works. It is a simple to understand application (python3 calc.py) that responds to API requests in the format /api?2+3-1*4 * (4+5). 
 
 Calc.py requires the Pip module ply.
 
