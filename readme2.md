@@ -42,3 +42,4 @@ Running calcserver2.py gives the following results.
 
 ![](tgraph2-4.png)
 
+This is all quite manual, is there a way to automate it? Let look for a easier way in [part III](readme3.md)
