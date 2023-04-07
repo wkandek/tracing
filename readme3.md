@@ -25,4 +25,15 @@ Here are the necessary steps once you have the files:
   
 greeter_client.py sends the string "you" to the server, the server answers with "Hello you!" all this using gRPC.
   
+Now let's change the helloworld application to an application that adds 2 numbers.
+
+Copy helloworld.proto to add.proto and change HelloWorld to Add, Greeter to Add, SayHello to AddTwo, delete SayHelloAgain.
+Generate the stub files.
+Copy greeter_server.py to add_Srever.py and Greeter_client.py to add_client.py. Change the relevant references from HelloWorld to Add, Greeter to Add, and change SayHello calls to an AddTwo call that has 2 parameters opone and optwo.
+
+Try your implementation, in case of problems the 3 files are available in the repo.
+
+Great - we now have the basics for a module that can be interfaced to our Calculator application. It only performs additions, but can easily be expanded to subtraction, multiplications and division.
+
+
 
